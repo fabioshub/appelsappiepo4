@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "po4", "po4\po4.csproj", "{AB2B8FC6-BBF1-431D-B403-7CB3559B6552}"
 EndProject
 Global
@@ -11,7 +12,14 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AB2B8FC6-BBF1-431D-B403-7CB3559B6552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AB2B8FC6-BBF1-431D-B403-7CB3559B6552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2B8FC6-BBF1-431D-B403-7CB3559B6552}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{AB2B8FC6-BBF1-431D-B403-7CB3559B6552}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB2B8FC6-BBF1-431D-B403-7CB3559B6552}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F41F5D9B-9238-4B0F-8509-7A201956DC1B}
 	EndGlobalSection
 EndGlobal
