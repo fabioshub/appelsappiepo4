@@ -70,7 +70,7 @@ namespace po4
 
         void Button_Click(object sender, EventArgs e)
         {
-            functio();
+            
         }
 
     }
