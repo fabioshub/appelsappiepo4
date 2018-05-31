@@ -15,6 +15,7 @@ namespace po4
         public string second;
     }
 
+
     [Activity(Label = "boodschapp", MainLauncher = false, Theme ="@style/Theme.AppCompat.Light.NoActionBar")]
     public class FabioActivity : Activity
     {
@@ -105,6 +106,9 @@ namespace po4
             StartActivity(demiIntent);
         }
 
+       
+
+       
 
     }
 
