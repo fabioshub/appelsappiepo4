@@ -1,0 +1,2 @@
+/Users/fabiodebruijn/Desktop/schoolprojectpo4/po4/obj/Debug/po4.csprojResolveAssemblyReference.cache
+/Users/fabiodebruijn/Desktop/schoolprojectpo4/po4/obj/Debug/po4.csproj.CoreCompileInputs.cache
