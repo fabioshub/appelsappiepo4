@@ -31,4 +31,13 @@ namespace po4
         Bathroom,
         Other,
     }
+
+    public enum DemiProductCategory
+    {
+        Food,
+        Drinks,
+        Dishes,
+        Nonfood,
+        Other
+    }
 }
