@@ -105,13 +105,13 @@ namespace po4
             StartActivity(demiIntent);
         }
 
-        public void functio()
-        {
-            mItems.Add(new holder() { first = "Appel", second = "2 stuks" });
-            adapter.NotifyDataSetChanged();
-            var intent = new Intent(this, typeof(FabioActivity));
-            StartActivity(intent);
-        }
+        //public void functio()
+        //{
+        //    mItems.Add(new holder() { first = "Appel", second = "2 stuks" });
+        //    adapter.NotifyDataSetChanged();
+        //    var intent = new Intent(this, typeof(FabioActivity));
+        //    StartActivity(intent);
+        //}
 
     }
 
