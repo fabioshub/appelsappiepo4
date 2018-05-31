@@ -13,20 +13,20 @@ using Android.Widget;
 
 namespace po4
 {
-    public class DemiProductAdapter : RecyclerView.Adapter
+    public class DemiProductListAdapter : RecyclerView.Adapter
     {
         public event EventHandler<int> ItemClick;
         public DemiProductList mProductList;
 
 
-        public DemiProductAdapter(DemiProductList productlist)
+        public DemiProductListAdapter (DemiProductList productList)
         {
-            mProductList = productlist;
+            mProductList = productList;
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-            View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.DemiProductCardView, parent, false);
+            View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.DemiCategoryCardView, parent, false);
             DemiRecycleViewHolderClass vh = new DemiRecycleViewHolderClass(itemView, OnClick);
             return vh;
         }
@@ -34,9 +34,8 @@ namespace po4
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             DemiRecycleViewHolderClass vh = holder as DemiRecycleViewHolderClass;
-            //vh.Category.Text = mProductList[position].category.ToString();
-            //vh.Group.Text = mProductList[position].group.ToString();
-            vh.Name.Text = mProductList[position].name.ToString();
+            vh.Category.Text = mProductList[position].category.ToString();
+            //vh.Group.Text = mProductList[position].GroupName;
         }
 
         public override int ItemCount
@@ -44,7 +43,7 @@ namespace po4
             get { return mProductList.NumProducts; }
         }
 
-        void OnClick(int position)
+        void OnClick (int position)
         {
             if (ItemClick != null) ItemClick(this, position);
         }

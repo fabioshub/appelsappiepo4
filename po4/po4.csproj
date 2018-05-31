@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -114,12 +114,19 @@
     <Compile Include="DemiThirdActivity.cs" />
     <Compile Include="DemiProductAdapter.cs" />
     <Compile Include="DemiProductGroup.cs" />
+    <Compile Include="DemiProductGroupListAdapter.cs" />
     <Compile Include="DemiProductList.cs" />
+    <Compile Include="DemiProductCategory.cs" />
     <Compile Include="DemiRecycleViewHolderClass.cs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     <Compile Include="demiProductListAdapter.cs" />
 >>>>>>> 48dca6b9be398f51761e77b6889dc48e987cc779
+=======
+    <Compile Include="demiProductListAdapter.cs" />
+    <Compile Include="adder.cs" />
+>>>>>>> parent of 48582e3... Code file Cleanup
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
