@@ -566,3 +566,4 @@ DerivedData/
 hs_err_pid*
 
 
+*.cache
