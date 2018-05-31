@@ -70,10 +70,14 @@ namespace po4
 
         void Button_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             var intent = new Intent(this, typeof(DemiSecondActivity));
 
             Toast.MakeText(this, "This is going to be a conflict ", ToastLength.Short).Show();
 
+=======
+            var intent = new Intent(this, typeof(FabioActivity));
+>>>>>>> d907e6b8641305eb466c764bed92b7a402f4061f
             StartActivity(intent);
         }
 
