@@ -118,15 +118,9 @@
     <Compile Include="DemiProductList.cs" />
     <Compile Include="DemiProductCategory.cs" />
     <Compile Include="DemiRecycleViewHolderClass.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     <Compile Include="demiProductListAdapter.cs" />
->>>>>>> 48dca6b9be398f51761e77b6889dc48e987cc779
-=======
     <Compile Include="demiProductListAdapter.cs" />
     <Compile Include="adder.cs" />
->>>>>>> parent of 48582e3... Code file Cleanup
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
