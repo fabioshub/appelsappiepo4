@@ -119,7 +119,6 @@
     <Compile Include="DemiProductCategory.cs" />
     <Compile Include="DemiRecycleViewHolderClass.cs" />
     <Compile Include="demiProductListAdapter.cs" />
-    <Compile Include="adder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
