@@ -13,7 +13,7 @@ using Android;
 
 namespace po4
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat.Light.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat.Light.NoActionBar", MainLauncher = false)]
     public class DemiMainActivity : AppCompatActivity
     {
         RecyclerView mRecyclerView;
@@ -31,7 +31,10 @@ namespace po4
 
             mProductList = new DemiProductList();
 
+
+
             SetContentView(Resource.Layout.Demiactivity_main);
+            button = FindViewById<Button>(Resource.Id.button1);
 
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView1);
 
@@ -39,9 +42,10 @@ namespace po4
             {
                 var productlist = Intent.Extras.GetStringArray("lijst");
                 ProductList = productlist.ToList();
+
+                button.Text = ProductList[2];
             }
 
-            button = FindViewById<Button>(Resource.Id.button1);
 
      
             //----------------------------------------------------------------------------------------
@@ -54,7 +58,7 @@ namespace po4
             // Adapter Set-up
             mAdapter = new DemiProductListAdapter(mProductList);
             mAdapter.ItemClick += OnItemClick;
-            button.Click += Button_Click;;
+            button.Click += Button_Click;
             mRecyclerView.SetAdapter(mAdapter);
 
         }

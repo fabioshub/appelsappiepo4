@@ -16,7 +16,7 @@ namespace po4
     //}
 
 
-    [Activity(Label = "boodschapp", MainLauncher = false, Theme ="@style/Theme.AppCompat.Light.NoActionBar")]
+    [Activity(Label = "boodschapp", MainLauncher = true, Theme ="@style/Theme.AppCompat.Light.NoActionBar")]
     public class FabioActivity : Activity
     {
         Button button, buttonDemi;
@@ -107,7 +107,7 @@ namespace po4
         {
             var demiIntent = new Intent(this, typeof(DemiMainActivity));
 
-            Intent.PutExtra("lijst", mItems.ToArray());
+            demiIntent.PutExtra("lijst", mItems.ToArray());
 
             StartActivity(demiIntent);
         }
