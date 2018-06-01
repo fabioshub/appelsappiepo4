@@ -19,7 +19,9 @@ namespace po4
         RecyclerView.LayoutManager  mLayoutManager;
         DemiProductGroupListAdapter mAdapter;
         DemiProductList             mProductList;
+        Button                      button;
         DemiProductCategory         CategoryID;
+        List<string> ListOfProducts = new List<string>();
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -31,10 +33,13 @@ namespace po4
             {
                 var category = (DemiProductCategory)Intent.Extras.GetInt("CategoryID");
                 CategoryID = category;
+                var productlist = Intent.Extras.GetStringArray("lijst");
+                ListOfProducts = productlist.ToList();
             }
 
             mProductList = new DemiProductList(CategoryID);
 
+            button = FindViewById<Button>(Resource.Id.button1);
 
             //----------------------------------------------------------------------------------------
             // Layout Managing Set-up
@@ -46,6 +51,9 @@ namespace po4
             // Adapter Set-up
             mAdapter = new DemiProductGroupListAdapter(mProductList);
             mAdapter.ItemClick += OnItemClick;
+
+            button.Click += Button_Click; ;
+
             mRecyclerView.SetAdapter(mAdapter);
 
         }
@@ -57,9 +65,20 @@ namespace po4
             Bundle b = new Bundle();
             b.PutInt("CategoryID", (int)mProductList[position].category);
             b.PutInt("GroupID", (int)mProductList[position].group);
+            b.PutStringArray("lijst", ListOfProducts.ToArray());
             intent.PutExtras(b);
 
             Toast.MakeText(this, "This is in group " + mProductList[position].group, ToastLength.Short).Show();
+
+            StartActivity(intent);
+        }
+
+
+        void Button_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(FabioActivity));
+
+            intent.PutExtra("lijst", ListOfProducts.ToArray());
 
             StartActivity(intent);
         }

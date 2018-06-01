@@ -16,11 +16,11 @@ namespace po4
     [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat.Light.NoActionBar", MainLauncher = true)]
     public class DemiMainActivity : AppCompatActivity
     {
-        RecyclerView mRecyclerView;
-        RecyclerView.LayoutManager mLayoutManager;
-        DemiProductListAdapter mAdapter;
-        DemiProductList mProductList;
-        Button button;
+        RecyclerView                mRecyclerView;
+        RecyclerView.LayoutManager  mLayoutManager;
+        DemiProductListAdapter      mAdapter;
+        DemiProductList             mProductList;
+        Button                      button;
 
         List<string> ListOfProducts = new List<string>();
 
@@ -28,17 +28,15 @@ namespace po4
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
-            mProductList = new DemiProductList();
+            mProductList    = new DemiProductList();
 
             SetContentView(Resource.Layout.Demiactivity_main);
-
-            mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView1);
+            mRecyclerView   = FindViewById<RecyclerView>(Resource.Id.recyclerView1);
 
             if (this.Intent.Extras != null)
             {
                 var productlist = Intent.Extras.GetStringArray("lijst");
-                ListOfProducts = productlist.ToList();
+                ListOfProducts  = productlist.ToList();
             }
 
 
@@ -62,17 +60,16 @@ namespace po4
 
         void OnItemClick(object sender, int position)
         {
-            //var intent = new Intent(this, typeof(DemiSecondActivity));
+            var intent = new Intent(this, typeof(DemiSecondActivity));
 
-            //Bundle b = new Bundle();
-            //b.PutInt("CategoryID", (int)mProductList[position].category);
-            //intent.PutExtras(b);
+            Bundle b = new Bundle();
+            b.PutInt("CategoryID", (int)mProductList[position].category);
+            b.PutStringArray("lijst", ListOfProducts.ToArray());
+            intent.PutExtras(b);
 
             //Toast.MakeText(this, "This is in category " + mProductList[position].category, ToastLength.Short).Show();
 
-            //StartActivity(intent);
-
-            ListOfProducts.Add(mProductList[position].category.ToString());
+            StartActivity(intent);
 
         }
 

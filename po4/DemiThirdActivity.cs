@@ -9,6 +9,7 @@ using Android.Support.V7.Widget;
 using System.Collections.Generic;
 using Android.Support.V7.App;
 using System.Linq;
+using Android;
 
 namespace po4
 {
@@ -17,10 +18,12 @@ namespace po4
     {
         RecyclerView                mRecyclerView;
         RecyclerView.LayoutManager  mLayoutManager;
-        DemiProductAdapter              mAdapter;
-        DemiProductList                 mProductList;
-        DemiProductCategory             CategoryID;
-        DemiProductGroup                GroupID;
+        DemiProductAdapter          mAdapter;
+        DemiProductList             mProductList;
+        Button                      button;
+        DemiProductCategory         CategoryID;
+        DemiProductGroup            GroupID;
+        List<string> ListOfProducts = new List<string>();
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -38,9 +41,13 @@ namespace po4
                 var group       = (DemiProductGroup)    Intent.Extras.GetInt("GroupID");
                 CategoryID      = category;
                 GroupID         = group;
+                var productlist = Intent.Extras.GetStringArray("lijst");
+                ListOfProducts = productlist.ToList();
             }
 
             mProductList = new DemiProductList(CategoryID, GroupID);
+
+            button = FindViewById<Button>(Resource.Id.button1);
 
             //----------------------------------------------------------------------------------------
             // Layout Managing Set-up
@@ -52,13 +59,27 @@ namespace po4
             // Adapter Set-up
             mAdapter = new DemiProductAdapter(mProductList);
             mAdapter.ItemClick += OnItemClick;
+
+            button.Click += Button_Click; ;
+
             mRecyclerView.SetAdapter(mAdapter);
 
         }
 
         void OnItemClick(object sender, int position)
         {
-            Toast.MakeText(this, "This is product  " + mProductList[position].name, ToastLength.Short).Show();
+            //Toast.MakeText(this, "This is product  " + mProductList[position].name, ToastLength.Short).Show();
+            ListOfProducts.Add(mProductList[position].name.ToString());
+        }
+
+
+        void Button_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(FabioActivity));
+
+            intent.PutExtra("lijst", ListOfProducts.ToArray());
+
+            StartActivity(intent);
         }
     }
 }
