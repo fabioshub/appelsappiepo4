@@ -106,6 +106,9 @@ namespace po4
         void ButtonDemi_Click(object sender, EventArgs e)
         {
             var demiIntent = new Intent(this, typeof(DemiMainActivity));
+
+            Intent.PutExtra("lijst", mItems.ToArray());
+
             StartActivity(demiIntent);
         }
 
