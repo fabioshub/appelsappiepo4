@@ -15,19 +15,17 @@ namespace po4
     [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat.Light.NoActionBar", MainLauncher = false)]
     public class DemiSecondActivity : AppCompatActivity
     {
-        RecyclerView mRecyclerView;
-        RecyclerView.LayoutManager mLayoutManager;
+        RecyclerView                mRecyclerView;
+        RecyclerView.LayoutManager  mLayoutManager;
         DemiProductGroupListAdapter mAdapter;
-        DemiProductList mProductList; // => List<Product>
-        DemiProductCategory CategoryID;
+        DemiProductList             mProductList;
+        DemiProductCategory         CategoryID;
 
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
-
-            SetContentView(Resource.Layout.Demiactivity_main);
-
-            mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView1);
+            base.OnCreate   (bundle);
+            SetContentView  (Resource.Layout.Demiactivity_main);
+            mRecyclerView   = FindViewById<RecyclerView>(Resource.Id.recyclerView1);
 
             if (this.Intent.Extras != null)
             {
@@ -37,8 +35,6 @@ namespace po4
 
             mProductList = new DemiProductList(CategoryID);
 
-            //
-            //var allProducts = DefaultProductList.Get().Where((product) => product.category == CategoryID);
 
             //----------------------------------------------------------------------------------------
             // Layout Managing Set-up

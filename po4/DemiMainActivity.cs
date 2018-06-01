@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Android.App;
-using System.Linq;
 using Android.Content;
 using Android.Runtime;
 using Android.Views;
@@ -23,6 +22,8 @@ namespace po4
         DemiProductList mProductList;
         Button button;
 
+        List<string> ProductList;
+
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -36,16 +37,8 @@ namespace po4
 
             if (this.Intent.Extras != null)
             {
-                var b = Intent.GetBundleExtra("Bundle");
-                IParcelable[] products = b.GetParcelableArray("ItemList");
-                List<IParcelable> productlista = products.ToList();
-                foreach (var v in products)
-                {
-                    Console.WriteLine();
-                }
-
-                GroceryListItem firstItem = ((GroceryListItem)products[0]);
-                TheFirstItem = firstItem;
+                var productlist = Intent.Extras.GetStringArray("lijst");
+                ProductList = productlist.ToList();
             }
 
             button = FindViewById<Button>(Resource.Id.button1);
