@@ -44,6 +44,7 @@ namespace po4
 
             mItems.Add("appel");
             products.Add(new GroceryListItem("Appel", "2 stuks"));
+            mItems.Add(new holder() { first = "Appel", second = "2 stuks"});
 
             adapter = new myListViewAdapter(this, mItems);
             mListView.Adapter = adapter;
