@@ -9,18 +9,18 @@ using Android.Content;
 
 namespace po4
 {
-    public class holder
-    {
-        public string first;
-        public string second;
-    }
+    //public class holder
+    //{
+    //    public string first;
+    //    public string second;
+    //}
 
 
     [Activity(Label = "boodschapp", MainLauncher = false, Theme ="@style/Theme.AppCompat.Light.NoActionBar")]
     public class FabioActivity : Activity
     {
         Button button, buttonDemi;
-        List<holder> mItems = new List<holder>();
+        List<string> mItems = new List<string>();
         //-----------------------------------------------------------
         List<GroceryListItem> products = new List<GroceryListItem>();
         //-----------------------------------------------------------
@@ -41,7 +41,7 @@ namespace po4
             mListView = FindViewById<ListView>(Resource.Id.mylistView);
 
 
-            mItems.Add(new holder() { first = "Appel", second = "2 stuks"});
+            mItems.Add("appel");
             products.Add(new GroceryListItem("Appel", "2 stuks"));
 
             adapter = new myListViewAdapter(this, mItems);
@@ -85,7 +85,7 @@ namespace po4
 
             if (currentvar1 != "")
             {
-                mItems.Add(new holder() { first = currentvar1, second = currentvar2 });
+                mItems.Add(currentvar1);
                 adapter.NotifyDataSetChanged();
                 editText1.Text = "";
                 editText2.Text = "";
@@ -94,6 +94,11 @@ namespace po4
             if (currentvar1 == "")
             {
                 Toast.MakeText(this, "Spoor jij Niet? nigga u gay lil fag ass midget strapon anal bish", ToastLength.Long).Show();
+                foreach(var v in mItems)
+                {
+                    Console.WriteLine(v);
+                    Console.WriteLine(v);
+                }
             }
         }
 

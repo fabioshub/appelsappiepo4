@@ -2710,14 +2710,14 @@ namespace po4
 			// aapt resource value: 0x7f080065
 			public const int list_item = 2131230821;
 			
-			// aapt resource value: 0x7f0800c0
-			public const int masked = 2131230912;
+			// aapt resource value: 0x7f0800bf
+			public const int masked = 2131230911;
 			
 			// aapt resource value: 0x7f0800af
 			public const int media_actions = 2131230895;
 			
-			// aapt resource value: 0x7f0800be
-			public const int message = 2131230910;
+			// aapt resource value: 0x7f0800bd
+			public const int message = 2131230909;
 			
 			// aapt resource value: 0x7f080042
 			public const int middle = 2131230786;
@@ -2965,9 +2965,6 @@ namespace po4
 			// aapt resource value: 0x7f0800bc
 			public const int txt1 = 2131230908;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int txt2 = 2131230909;
-			
 			// aapt resource value: 0x7f08003f
 			public const int uniform = 2131230783;
 			
@@ -2983,8 +2980,8 @@ namespace po4
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800bf
-			public const int visible = 2131230911;
+			// aapt resource value: 0x7f0800be
+			public const int visible = 2131230910;
 			
 			// aapt resource value: 0x7f08004d
 			public const int withText = 2131230797;

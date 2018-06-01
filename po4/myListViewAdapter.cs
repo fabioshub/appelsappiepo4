@@ -5,13 +5,13 @@ using Android.Widget;
 
 namespace po4
 {
-    class myListViewAdapter : BaseAdapter<holder>
+    class myListViewAdapter : BaseAdapter<string>
     {
 
-        private List<holder> mItems;
+        private List<string> mItems;
         private Context mContext;
 
-        public myListViewAdapter(Context context, List<holder> items)
+        public myListViewAdapter(Context context, List<string> items)
         {
             mItems = items;
             mContext = context;
@@ -24,7 +24,7 @@ namespace po4
             return position;
         }
 
-        public override holder this[int position] => mItems[position];
+        public override string this[int position] => mItems[position];
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
@@ -36,10 +36,10 @@ namespace po4
             }
 
             TextView txt1 = row.FindViewById<TextView>(Resource.Id.txt1);
-            txt1.Text = mItems[position].first;
+            txt1.Text = mItems[position];
 
-            TextView txt2 = row.FindViewById<TextView>(Resource.Id.txt2);
-            txt2.Text = mItems[position].second;
+            //TextView txt2 = row.FindViewById<TextView>(Resource.Id.txt2);
+            //txt2.Text = mItems[position].second;
 
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using System.Linq;
 using Android.Content;
 using Android.Runtime;
 using Android.Views;
@@ -38,6 +39,12 @@ namespace po4
             {
                 var b = Intent.GetBundleExtra("Bundle");
                 IParcelable[] products = b.GetParcelableArray("ItemList");
+                List<IParcelable> productlista = products.ToList();
+                foreach (var v in products)
+                {
+                    Console.WriteLine();
+                }
+
                 GroceryListItem firstItem = ((GroceryListItem)products[0]);
                 TheFirstItem = firstItem;
             }
