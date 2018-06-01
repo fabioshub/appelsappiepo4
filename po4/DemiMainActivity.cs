@@ -22,7 +22,7 @@ namespace po4
         DemiProductList mProductList;
         Button button;
 
-        List<string> ProductList;
+        List<string> ListOfProducts = new List<string>();
 
 
         protected override void OnCreate(Bundle bundle)
@@ -38,8 +38,10 @@ namespace po4
             if (this.Intent.Extras != null)
             {
                 var productlist = Intent.Extras.GetStringArray("lijst");
-                ProductList = productlist.ToList();
+                ListOfProducts = productlist.ToList();
             }
+
+            //ListOfProducts.Add("8");
 
             button = FindViewById<Button>(Resource.Id.button1);
 
@@ -61,15 +63,17 @@ namespace po4
 
         void OnItemClick(object sender, int position)
         {
-            var intent = new Intent(this, typeof(DemiSecondActivity));
+            //var intent = new Intent(this, typeof(DemiSecondActivity));
 
-            Bundle b = new Bundle();
-            b.PutInt("CategoryID", (int)mProductList[position].category);
-            intent.PutExtras(b);
+            //Bundle b = new Bundle();
+            //b.PutInt("CategoryID", (int)mProductList[position].category);
+            //intent.PutExtras(b);
 
-            Toast.MakeText(this, "This is in category " + mProductList[position].category, ToastLength.Short).Show();
+            //Toast.MakeText(this, "This is in category " + mProductList[position].category, ToastLength.Short).Show();
 
-            StartActivity(intent);
+            //StartActivity(intent);
+
+            Toast.MakeText(this, "List has as first product " + ListOfProducts[0], ToastLength.Short).Show();
         }
 
 

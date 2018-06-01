@@ -107,7 +107,7 @@ namespace po4
         {
             var demiIntent = new Intent(this, typeof(DemiMainActivity));
 
-            Intent.PutExtra("lijst", mItems.ToArray());
+            demiIntent.PutExtra("lijst", mItems.ToArray());
 
             StartActivity(demiIntent);
         }
