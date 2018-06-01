@@ -21,13 +21,9 @@ namespace po4
     {
         Button button, buttonDemi;
         List<string> mItems = new List<string>();
-        //-----------------------------------------------------------
-        List<GroceryListItem> products = new List<GroceryListItem>();
-        //-----------------------------------------------------------
-        List<holder> mItems = new List<holder>();
+ 
         ListView mListView;
         EditText editText1;
-        EditText editText2;
         myListViewAdapter adapter;
 
 
@@ -43,8 +39,6 @@ namespace po4
 
 
             mItems.Add("appel");
-            products.Add(new GroceryListItem("Appel", "2 stuks"));
-            mItems.Add(new holder() { first = "Appel", second = "2 stuks"});
 
             adapter = new myListViewAdapter(this, mItems);
             mListView.Adapter = adapter;
@@ -80,17 +74,15 @@ namespace po4
         void Button_Click(object sender, System.EventArgs e)
         {
             editText1 = FindViewById<EditText>(Resource.Id.editText1);
-            editText2 = FindViewById<EditText>(Resource.Id.editText2);
+            //
 
             var currentvar1 = editText1.Text;
-            var currentvar2 = editText2.Text;
 
             if (currentvar1 != "")
             {
                 mItems.Add(currentvar1);
                 adapter.NotifyDataSetChanged();
                 editText1.Text = "";
-                editText2.Text = "";
             }
 
             if (currentvar1 == "")
