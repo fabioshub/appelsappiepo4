@@ -16,7 +16,7 @@ namespace po4
     //}
 
 
-    [Activity(Label = "boodschapp", MainLauncher = false, Theme ="@style/Theme.AppCompat.Light.NoActionBar")]
+    [Activity(Label = "boodschapp", MainLauncher = true, Theme ="@style/Theme.AppCompat.Light.NoActionBar")]
     public class FabioActivity : Activity
     {
         Button button, buttonDemi;
