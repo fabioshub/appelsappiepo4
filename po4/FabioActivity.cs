@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using System.Linq;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
@@ -37,8 +38,13 @@ namespace po4
             buttonDemi = FindViewById<Button>(Resource.Id.demi);
             mListView = FindViewById<ListView>(Resource.Id.mylistView);
 
+            if (this.Intent.Extras != null)
+            {
+                var productlist = Intent.Extras.GetStringArray("lijst");
+                mItems = productlist.ToList();
+            }
 
-            mItems.Add("appel");
+            //mItems.Add("appel");
 
             adapter = new myListViewAdapter(this, mItems);
             mListView.Adapter = adapter;

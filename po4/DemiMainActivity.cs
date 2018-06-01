@@ -41,7 +41,6 @@ namespace po4
                 ListOfProducts = productlist.ToList();
             }
 
-            ListOfProducts.Add("8");
 
             button = FindViewById<Button>(Resource.Id.button1);
 
@@ -73,7 +72,8 @@ namespace po4
 
             //StartActivity(intent);
 
-            Toast.MakeText(this, "List has as first product " + ListOfProducts[0], ToastLength.Short).Show();
+            ListOfProducts.Add(mProductList[position].category.ToString());
+
         }
 
 
@@ -81,6 +81,9 @@ namespace po4
         void Button_Click(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(FabioActivity));
+
+            intent.PutExtra("lijst", ListOfProducts.ToArray());
+
             StartActivity(intent);
         }
 
