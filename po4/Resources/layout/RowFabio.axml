@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/txt1"
         android:paddingTop="10dp"
-        android:paddingLeft="30px"
+        android:paddingLeft="100px"
         android:textSize="20sp"
         android:gravity="left"
         android:textColor="#ff8d8d8d"
