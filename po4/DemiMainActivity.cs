@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -8,6 +9,7 @@ using Android.OS;
 using Android.Support.V7.Widget;
 using System.Collections.Generic;
 using Android.Support.V7.App;
+using Android;
 
 namespace po4
 {
@@ -20,9 +22,6 @@ namespace po4
         DemiProductList mProductList;
         Button button;
 
-        GroceryListItem TheFirstItem;
-
-
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -33,14 +32,6 @@ namespace po4
             SetContentView(Resource.Layout.Demiactivity_main);
 
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView1);
-
-            if (this.Intent.Extras != null)
-            {
-                var b = Intent.GetBundleExtra("Bundle");
-                IParcelable[] products = b.GetParcelableArray("ItemList");
-                GroceryListItem firstItem = ((GroceryListItem)products[0]);
-                TheFirstItem = firstItem;
-            }
 
             button = FindViewById<Button>(Resource.Id.button1);
 
