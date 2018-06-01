@@ -22,7 +22,7 @@ namespace po4
         Button button, buttonDemi;
         List<holder> mItems = new List<holder>();
         //-----------------------------------------------------------
-        //List<Gro>
+        List<GroceryListItem> products = new List<GroceryListItem>();
         //-----------------------------------------------------------
         ListView mListView;
         EditText editText1;
@@ -42,6 +42,7 @@ namespace po4
 
 
             mItems.Add(new holder() { first = "Appel", second = "2 stuks"});
+            products.Add(new GroceryListItem("Appel", "2 stuks"));
 
             adapter = new myListViewAdapter(this, mItems);
             mListView.Adapter = adapter;
@@ -106,6 +107,11 @@ namespace po4
         void ButtonDemi_Click(object sender, EventArgs e)
         {
             var demiIntent = new Intent(this, typeof(DemiMainActivity));
+
+            Bundle b = new Bundle();
+
+            b.PutParcelableArray("ItemList", products.ToArray());
+            Intent.PutExtra("Bundle", b);
 
             StartActivity(demiIntent);
         }
