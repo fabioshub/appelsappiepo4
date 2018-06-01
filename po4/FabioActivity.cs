@@ -16,7 +16,7 @@ namespace po4
     //}
 
 
-    [Activity(Label = "boodschapp", MainLauncher = true, Theme ="@style/Theme.AppCompat.Light.NoActionBar")]
+    [Activity(Label = "boodschapp", MainLauncher = false, Theme ="@style/Theme.AppCompat.Light.NoActionBar")]
     public class FabioActivity : Activity
     {
         Button button, buttonDemi;
@@ -74,7 +74,6 @@ namespace po4
         void Button_Click(object sender, System.EventArgs e)
         {
             editText1 = FindViewById<EditText>(Resource.Id.editText1);
-            //
 
             var currentvar1 = editText1.Text;
 
