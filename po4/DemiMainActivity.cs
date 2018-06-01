@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Support.V7.Widget;
 using System.Collections.Generic;
 using Android.Support.V7.App;
+using Android;
 
 namespace po4
 {
@@ -20,9 +21,6 @@ namespace po4
         DemiProductListAdapter mAdapter;
         DemiProductList mProductList;
         Button button;
-
-        GroceryListItem TheFirstItem;
-
 
 
         protected override void OnCreate(Bundle bundle)
