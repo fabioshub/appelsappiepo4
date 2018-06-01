@@ -30,6 +30,8 @@ namespace po4
 
             mRecyclerView   = FindViewById<RecyclerView>(Resource.Id.recyclerView1);
 
+
+
             if (this.Intent.Extras != null)
             {
                 var category    = (DemiProductCategory) Intent.Extras.GetInt("CategoryID");

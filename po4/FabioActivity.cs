@@ -20,7 +20,10 @@ namespace po4
     public class FabioActivity : Activity
     {
         Button button, buttonDemi;
-        public List<holder> mItems = new List<holder>();
+        List<holder> mItems = new List<holder>();
+        //-----------------------------------------------------------
+        //List<Gro>
+        //-----------------------------------------------------------
         ListView mListView;
         EditText editText1;
         EditText editText2;
@@ -103,6 +106,7 @@ namespace po4
         void ButtonDemi_Click(object sender, EventArgs e)
         {
             var demiIntent = new Intent(this, typeof(DemiMainActivity));
+
             StartActivity(demiIntent);
         }
 

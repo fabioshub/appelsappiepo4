@@ -19,7 +19,6 @@ namespace po4
         DemiProductListAdapter mAdapter;
         DemiProductList mProductList;
         Button button;
-    
 
 
 
@@ -34,7 +33,6 @@ namespace po4
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView1);
 
             button = FindViewById<Button>(Resource.Id.button1);
-
 
      
             //----------------------------------------------------------------------------------------
